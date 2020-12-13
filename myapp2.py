@@ -12,6 +12,7 @@ import os
 from pickle import dump, load
 import numpy as np
 import pandas
+import h5py
 
 #import tensorflow as tf
 import tensorflow as tf
@@ -127,10 +128,11 @@ tokenizer = load(open("tokenizer.p","rb"))
 
 #model = load_model('/app/model_9.h5')
 # Convert the model.
-model_keras=tf.keras.models.load_model('/app/model_9.h5')
-converter = tf.lite.TFLiteConverter.from_keras_model(model_keras)
-model = converter.convert()
-#model=tf.keras.models.load_model('model_9.h5')
+#model_keras=tf.keras.models.load_model('model_9.h5')
+#converter = tf.lite.TFLiteConverter.from_keras_model(model_keras)
+#model = converter.convert()
+model_save.save('model_9.h5')
+model=tf.keras.models.load_model(model_save)
 # Save the model.
 #with open('model.tflite', 'wb') as f:
 #  f.write(tflite_model)
