@@ -25,7 +25,6 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.utils import to_categorical
 from keras.layers.merge import add
 from tensorflow.keras.models import Model, load_model
-from tf.keras.models import Model, load_model
 from tensorflow.keras.layers import Input, Dense, LSTM, Embedding, Dropout
 
 from tqdm.notebook import tqdm as tqdm
