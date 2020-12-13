@@ -8,5 +8,4 @@ keras-models==0.0.7
 keras-preprocessing==1.1.2
 keras-utils==1.0.13
 tqdm==4.48.2
-hdf5==1.10.4
 h5py==2.10.0
