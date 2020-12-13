@@ -127,7 +127,7 @@ tokenizer = load(open("tokenizer.p","rb"))
 
 #model = load_model('/app/model_9.h5')
 # Convert the model.
-model_keras=tf.keras.models.load_model('model_9.h5')
+model_keras=tf.keras.models.load_model('/app/model_9.h5')
 converter = tf.lite.TFLiteConverter.from_keras_model(model_keras)
 model = converter.convert()
 #model=tf.keras.models.load_model('model_9.h5')
