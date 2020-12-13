@@ -131,12 +131,11 @@ tokenizer = load(open("tokenizer.p","rb"))
 #model_keras=tf.keras.models.load_model('model_9.h5')
 #converter = tf.lite.TFLiteConverter.from_keras_model(model_keras)
 #model = converter.convert()
-
-model = load_model("model_9.h5")
+hf = h5py.File("model_9.h5", 'r')
+model = load_model(hf)
 # Save the model.
 #with open('model.tflite', 'wb') as f:
 #  f.write(tflite_model)
-
 
 
 
