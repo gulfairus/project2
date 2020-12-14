@@ -13,6 +13,7 @@ from pickle import dump, load
 import numpy as np
 import pandas
 import h5py
+import pathlib
 
 #import tensorflow as tf
 import tensorflow as tf
