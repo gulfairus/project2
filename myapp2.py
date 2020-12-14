@@ -129,14 +129,19 @@ tokenizer = load(open("tokenizer.p","rb"))
 #model = load_model('model_9.h5')
 # Convert the model.
 #model_keras=tf.keras.models.load_model('model_9.h5')
-converter = tf.lite.TFLiteConverter.from_keras_model('model_9.h5')
-tflite_model = converter.convert()
-#hf = h5py.File("model_9.h5", 'r')
-#model = load_model(hf)
+
+#converter = tf.lite.TFLiteConverter.from_keras_model('model_9.h5')
+#tflite_model = converter.convert()
 # Save the model.
-with open('model.tflite', 'wb') as f:
-  f.write(tflite_model)
-model = load_model('model.tflite')
+#with open('model.tflite', 'wb') as f:
+#  f.write(tflite_model)
+#model = load_model('model.tflite')
+
+import urllib.request
+link = "https://drive.google.com/file/d/17SVXrmUW-dINgipPR3hqrl4M8bmIESaW/view?usp=sharing"
+f = urllib.request.urlopen(link)
+myfile = f.read()
+model = load_model(myfile)
 
 
 xception_model = Xception(include_top=False, pooling="avg")
