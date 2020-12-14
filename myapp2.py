@@ -146,13 +146,13 @@ tokenizer = load(open("tokenizer.p","rb"))
 
 import urllib.request
 link = "https://drive.google.com/file/d/17SVXrmUW-dINgipPR3hqrl4M8bmIESaW/view?usp=sharing"
-f = urllib.request.urlopen(link)
-myfile = f.read()
+#f = urllib.request.urlopen(link)
+#myfile = f.read()
 #model = load_model(myfile)
 # Save tf.keras model in H5 format.
-keras_file = 'model9.h5'
-tf.keras.models.save_model(myfile, keras_file)
-model = load_model(model9.h5)
+#keras_file = 'model9.h5'
+#tf.keras.models.save_model(myfile, keras_file)
+model = load_model(link)
 
 xception_model = Xception(include_top=False, pooling="avg")
 
