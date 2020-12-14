@@ -137,11 +137,18 @@ tokenizer = load(open("tokenizer.p","rb"))
 #  f.write(tflite_model)
 #model = load_model('model.tflite')
 
-import urllib.request
-link = "https://drive.google.com/file/d/17SVXrmUW-dINgipPR3hqrl4M8bmIESaW/view?usp=sharing"
-f = urllib.request.urlopen(link)
-myfile = f.read()
-model = load_model(myfile)
+converter = tf.lite.TFLiteConverter.from_saved_model("model_9.h5") # path to the SavedModel directory
+tflite_model = converter.convert()
+# Save the model.
+with open('model.tflite', 'wb') as f:
+  f.write(tflite_model)
+model = load_model('model.tflite')
+
+#import urllib.request
+#link = "https://drive.google.com/file/d/17SVXrmUW-dINgipPR3hqrl4M8bmIESaW/view?usp=sharing"
+#f = urllib.request.urlopen(link)
+#myfile = f.read()
+#model = load_model(myfile)
 
 
 xception_model = Xception(include_top=False, pooling="avg")
