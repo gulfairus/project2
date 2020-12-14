@@ -126,17 +126,17 @@ max_length = 32
 tokenizer = load(open("tokenizer.p","rb"))
 #model = load_model('C:/Users/admin/aegis/Capstone_project/streamlit/project/models/model_9.h5')
 
-#model = load_model('/app/model_9.h5')
+#model = load_model('model_9.h5')
 # Convert the model.
 #model_keras=tf.keras.models.load_model('model_9.h5')
-#converter = tf.lite.TFLiteConverter.from_keras_model(model_keras)
-#model = converter.convert()
-hf = h5py.File("model_9.h5", 'r')
-model = load_model(hf)
+converter = tf.lite.TFLiteConverter.from_keras_model('model_9.h5')
+tflite_model = converter.convert()
+#hf = h5py.File("model_9.h5", 'r')
+#model = load_model(hf)
 # Save the model.
-#with open('model.tflite', 'wb') as f:
-#  f.write(tflite_model)
-
+with open('model.tflite', 'wb') as f:
+  f.write(tflite_model)
+model = load_model('model.tflite')
 
 
 xception_model = Xception(include_top=False, pooling="avg")
