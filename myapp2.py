@@ -124,9 +124,11 @@ def generate_desc(model, tokenizer, photo, max_length):
 #
 max_length = 32
 tokenizer = load(open("tokenizer.p","rb"))
+
+
 #model = load_model('C:/Users/admin/aegis/Capstone_project/streamlit/project/models/model_9.h5')
 
-model = load_model('/model_9.h5')
+#model = load_model('model_9.h5')
 # Convert the model.
 #model_keras=tf.keras.models.load_model('model_9.h5')
 
@@ -153,6 +155,9 @@ model = load_model('/model_9.h5')
 #keras_file = 'model9.h5'
 #tf.keras.models.save_model(myfile, keras_file)
 #model = load_model(link)
+
+import os 
+os.system('model.py')
 
 xception_model = Xception(include_top=False, pooling="avg")
 
