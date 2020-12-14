@@ -162,7 +162,7 @@ tokenizer = load(open("tokenizer.p","rb"))
 
 #link = r'C:/Users/admin/aegis/Capstone_project/streamlit/project/models/model_9.h5'
 #model_dir = pathlib.Path(link)
-model = load_model('https://project2model.s3.us-east-2.amazonaws.com/model_9.h5')
+model = load_model(r'https://project2model.s3.us-east-2.amazonaws.com/model_9.h5')
 
 xception_model = Xception(include_top=False, pooling="avg")
 
