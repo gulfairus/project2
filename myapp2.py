@@ -127,8 +127,8 @@ tokenizer = load(open("tokenizer.p","rb"))
 
 
 #model = load_model('C:/Users/admin/aegis/Capstone_project/streamlit/project/models/model_9.h5')
-
-model = load_model('/app/model_9.h5')
+#images = r"C:\Users\Piyush Mishra\Desktop\AI_Assignment\Flicker8k_Dataset/"
+model = load_model(r'C:/Users/admin/aegis/Capstone_project/streamlit/project/models/model_9.h5')
 # Convert the model.
 #model_keras=tf.keras.models.load_model('model_9.h5')
 
