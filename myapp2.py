@@ -14,6 +14,7 @@ import numpy as np
 import pandas
 import h5py
 import pathlib
+import boto3
 
 #import tensorflow as tf
 import tensorflow as tf
@@ -183,10 +184,15 @@ st.write("""
 st.write("This is a simple image captioning web app to predict caption of the image")
 file = st.file_uploader("Please upload an image file", type=["jpg", "png"])
 
-photo = extract_features(file, xception_model)
-#photo = extract_features(pics[pic], xception_model)
-#    img = Image.open(pics[pic])
-description = generate_desc(model, tokenizer, photo, max_length)
-#st.image(pics[pic], use_column_width=True, caption=0)
-#st.image(pics[pic], use_column_width=True, caption=description)
-st.image(file, use_column_width=True, caption=description)
+filesize = os.path.getsize(file)
+
+if filesize == 0:
+#    print("The file is empty: " + str(filesize))
+else:
+    photo = extract_features(file, xception_model)
+    #photo = extract_features(pics[pic], xception_model)
+    #    img = Image.open(pics[pic])
+    description = generate_desc(model, tokenizer, photo, max_length)
+    #st.image(pics[pic], use_column_width=True, caption=0)
+    #st.image(pics[pic], use_column_width=True, caption=description)
+    st.image(file, use_column_width=True, caption=description)
