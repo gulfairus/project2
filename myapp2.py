@@ -162,7 +162,17 @@ tokenizer = load(open("tokenizer.p","rb"))
 
 #link = r'C:/Users/admin/aegis/Capstone_project/streamlit/project/models/model_9.h5'
 #model_dir = pathlib.Path(link)
-model = load_model(r'https://project2model.s3.us-east-2.amazonaws.com/model_9.h5')
+#import boto3
+#model = load_model(r'https://project2model.s3.us-east-2.amazonaws.com/model_9.h5')
+
+import boto3
+client = boto3.client('s3', 
+                      aws_access_key_id='AKIAJGBGWMQVODVC3UGQ',
+                      aws_secret_access_key='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')
+client.download_file('project2model',
+                     'model_9.h5',
+                     'model_9.h5')
+model = load_model('model_9.h5')
 
 xception_model = Xception(include_top=False, pooling="avg")
 
