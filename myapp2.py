@@ -129,42 +129,6 @@ tokenizer = load(open("tokenizer.p","rb"))
 
 
 #model = load_model('C:/Users/admin/aegis/Capstone_project/streamlit/project/models/model_9.h5')
-#images = r"C:\Users\Piyush Mishra\Desktop\AI_Assignment\Flicker8k_Dataset/"
-#model = load_model(r'C:/Users/admin/aegis/Capstone_project/streamlit/project/models/model_9.h5')
-# Convert the model.
-#model_keras=tf.keras.models.load_model('model_9.h5')
-
-#converter = tf.lite.TFLiteConverter.from_keras_model('model_9.h5')
-#tflite_model = converter.convert()
-# Save the model.
-#with open('model.tflite', 'wb') as f:
-#  f.write(tflite_model)
-#model = load_model('model.tflite')
-
-#converter = tf.lite.TFLiteConverter.from_saved_model("model_9.h5") # path to the SavedModel directory
-#tflite_model = converter.convert()
-# Save the model.
-#with open('model.tflite', 'wb') as f:
-#  f.write(tflite_model)
-#model = load_model('model.tflite')
-
-#import urllib.request
-#link = "https://drive.google.com/file/d/17SVXrmUW-dINgipPR3hqrl4M8bmIESaW/view?usp=sharing"
-#f = urllib.request.urlopen(link)
-#myfile = f.read()
-#model = load_model(myfile)
-# Save tf.keras model in H5 format.
-#keras_file = 'model9.h5'
-#tf.keras.models.save_model(myfile, keras_file)
-#model = load_model(link)
-
-#import os 
-#os.system('model.py')
-
-#link = r'C:/Users/admin/aegis/Capstone_project/streamlit/project/models/model_9.h5'
-#model_dir = pathlib.Path(link)
-#import boto3
-#model = load_model(r'https://project2model.s3.us-east-2.amazonaws.com/model_9.h5')
 
 import boto3
 client = boto3.client('s3', 
