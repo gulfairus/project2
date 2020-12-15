@@ -177,8 +177,16 @@ model = load_model('model_9.h5')
 xception_model = Xception(include_top=False, pooling="avg")
 
 
-photo = extract_features(pics[pic], xception_model)
+st.write("""
+# Image Captioning Prediction
+""")
+st.write("This is a simple image captioning web app to predict caption of the image")
+file = st.file_uploader("Please upload an image file", type=["jpg", "png"])
+
+photo = extract_features(file, xception_model)
+#photo = extract_features(pics[pic], xception_model)
 #    img = Image.open(pics[pic])
 description = generate_desc(model, tokenizer, photo, max_length)
 #st.image(pics[pic], use_column_width=True, caption=0)
-st.image(pics[pic], use_column_width=True, caption=description)
+#st.image(pics[pic], use_column_width=True, caption=description)
+st.image(file, use_column_width=True, caption=description)
