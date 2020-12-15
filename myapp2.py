@@ -78,9 +78,9 @@ def dict_pics(train_imgs):
         #    pics[] = {train_imgs[i]: '/'.join([img_path, train_imgs[i]])}
         pics[train_imgs[i]] = '/'.join([img_path, train_imgs[i]])
     return pics
-pics = dict_pics(train_imgs)
+#pics = dict_pics(train_imgs)
 
-pic = st.selectbox("Picture choices", list(pics.keys()), 0)
+#pic = st.selectbox("Picture choices", list(pics.keys()), 0)
 
 
 import numpy as np
