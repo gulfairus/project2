@@ -132,8 +132,8 @@ tokenizer = load(open("tokenizer.p","rb"))
 
 import boto3
 client = boto3.client('s3', 
-                      aws_access_key_id='AKIAJGBGWMQVODVC3UGQ',
-                      aws_secret_access_key='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')
+                      aws_access_key_id='',
+                      aws_secret_access_key='')
 client.download_file('project2model',
                      'model_9.h5',
                      'model_9.h5')
