@@ -174,6 +174,7 @@ client.download_file('project2model',
                      'model_9.h5',
                      'model_9.h5')
 model = load_model('model_9.h5')
+model.save('/models/model_9.h5')
 
 xception_model = Xception(include_top=False, pooling="avg")
 
