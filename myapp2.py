@@ -187,7 +187,7 @@ file = st.file_uploader("Please upload an image file", type=["jpg", "png"])
 filesize = os.path.getsize(file)
 
 if filesize == 0:
-#    print("The file is empty: " + str(filesize))
+    print("")
 else:
     photo = extract_features(file, xception_model)
     #photo = extract_features(pics[pic], xception_model)
